@@ -20,6 +20,8 @@
                             <h2 class="text-lg font-medium text-gray-900">Загрузка файла</h2>
                             <p class="mt-1 text-sm text-gray-600"> Загрузите ваш файл </p>
                         </header>
+                        <img v-if="topic.image === 1" class="w-32 h-32" :src="file" alt="" />
+
                         <form  @submit.prevent="updateTopic"
                                enctype="multipart/form-data"  class="mt-6 space-y-6">
                             <div>
@@ -36,7 +38,6 @@
                             <div>
                                 <label class="block font-medium text-sm text-gray-700" for="email">
                                     <span>Файл</span>
-                                    <img v-if="topic.image === 1" class="w-32 h-32" :src="file" alt="" />
                                 </label>
                                 <input type="file" id="file" @input="form.file = $event.target.files[0]" name="file" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
                                 <div class="mt-2" style="">
